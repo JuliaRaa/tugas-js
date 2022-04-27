@@ -40,15 +40,15 @@ let koordinatX= [40, 3, 25, 9, 32, 16]
 // })
 
 // returns a single value: the function's accumulated result
-const newKoordinatX= koordinatX.reduce((sum, element, index) => {
-    return sum + element
-})
+// const newKoordinatX= koordinatX.reduce((sum, element, index) => {
+//     return sum + element
+// })
 
 // returns the value of the first element that passes a test
 // const newKoordinatX= koordinatX.find((element, index) => {
 //     return element>18
 // })
-console.log(newKoordinatX)
+// console.log(newKoordinatX)
 
 
 // nomor 4
@@ -56,33 +56,34 @@ console.log(newKoordinatX)
 // console.log(text.match(/a/g).length)
 // vowelDetector("javascript")
 
-// function vowelDetector(string){
-//     let kontainer ={}
-//     if (string.includes("a")){
-//         kontainer ={...kontainer, a: string.match(/a/g).length} 
-//     }
-//     if (string.includes("i")){
-//         kontainer ={...kontainer, i: string.match(/i/g).length} 
-//     }
+function vowelDetector(string){
+    let kontainer ={}
+    if (string.toLowerCase().includes("a")){
+        kontainer ={...kontainer, a: string.toLowerCase().match(/a/g).length} 
+    }
+    if (string.toLowerCase().includes("i")){
+        kontainer ={...kontainer, i: string.toLowerCase().match(/i/g).length} 
+    }
 
-//     if (string.includes("u")){
-//         kontainer ={...kontainer, u: string.match(/u/g).length} 
-//     }
-//     if (string.includes("e")){
-//         kontainer ={...kontainer, e: string.match(/e/g).length} 
-//     }
-//     if (string.includes("o")){
-//         kontainer ={...kontainer, o: string.match(/o/g).length} 
-//     }
-//     return kontainer
-// }
-// console.log(vowelDetector("jAvascript"))
+    if (string.toLowerCase().includes("u")){
+        kontainer ={...kontainer, u: string.toLowerCase().match(/u/g).length} 
+    }
+    if (string.toLowerCase().includes("e")){
+        kontainer ={...kontainer, e: string.toLowerCase().match(/e/g).length} 
+    }
+    if (string.toLowerCase().includes("o")){
+        kontainer ={...kontainer, o: string.toLowerCase().match(/o/g).length} 
+    }
+    return kontainer
+}
+console.log(vowelDetector("jAvascript"))
 
 //nomor 5
 palindrom("kAtak")
 function palindrom(text){
     let n= text.length;
-    let newText = text.split("");
+    let newText = text.toLowerCase().split("");
+    // console.log(newText)
     let dummy=[];
     for(let i=0; i<=n-1; i++){
         // console.log(newText[i])
@@ -94,8 +95,8 @@ function palindrom(text){
         //     console.log( `${text} bukan merupakan palindrom`)
         // }
     }
-    console.log(dummy)
-    if (text === dummy){
+    // console.log(dummy)
+    if (text.toLowerCase() === dummy){
         console.log(`${text} merupakan palindrom`  )
     }else{
         console.log( `${text} bukan merupakan palindrom`)
